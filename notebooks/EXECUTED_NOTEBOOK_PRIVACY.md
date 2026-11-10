@@ -1,0 +1,1 @@
+The public copy of REPRODUCE_SOLAR_EXECUTED.ipynb preserves execution counts, cell text and validation logs, but strips inline previews of Kaggle-provided test JPEGs (one output image) to avoid redistributing dataset imagery. The original fully executed notebook remains in the participant-owned private workspace.

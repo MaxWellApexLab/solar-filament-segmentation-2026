@@ -1,0 +1,12 @@
+{
+  "verified_real_test_images": 180,
+  "actual_inference_pipeline": "genuine compact U-Net + 4-flip TTA + 2048 edge refinement",
+  "model_sha256": "a0183861865e2cb3e152b8640bcc61c503d66b206c9fcfc9ed682a6c7fe6349f",
+  "csv_sha256": "e0e55cf4eb383769c17b742d556d619859307b82a4267792ad2345698126d9ea",
+  "equals_published_candidate": true,
+  "individual_filament_rows": 1013,
+  "test_ground_truth_used": false,
+  "local_training_audit_pq": 0.27311477742304735,
+  "organizer_leaderboard_score": null,
+  "formal_submission_completed": false
+}

@@ -1,0 +1,16 @@
+{
+  "provided_by_participant": true,
+  "sources": [
+    {
+      "name": "00.zip",
+      "size_bytes": 461916500,
+      "sha256": "e93ef20f0a24b7d64f07953e961f4bc6f6c030f0c0bd2cd3d0c0b770992fce1a"
+    },
+    {
+      "name": "MAGFiLO_1.0_Kaggle_2026.zip",
+      "size_bytes": 241725741,
+      "sha256": "a97b4a68dc2b71722d42406264bf60a508b0c6cd3cc0ad9084e819d9e317f3be"
+    }
+  ],
+  "no_api_credentials_saved": true
+}

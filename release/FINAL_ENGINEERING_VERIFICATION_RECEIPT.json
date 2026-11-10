@@ -1,0 +1,29 @@
+{
+  "result": "PRE_PUBLICATION_ENGINEERING_VERIFIED",
+  "official_submission_accepted": false,
+  "official_leaderboard_score": null,
+  "participant_actions_required": [
+    "Set real author and affiliation in ACM report, approve open-source/data/model terms",
+    "Publish source repository",
+    "Upload plain CSV to Kaggle",
+    "Submit final organizer Google Form"
+  ],
+  "trained_checkpoint_sha256": "a0183861865e2cb3e152b8640bcc61c503d66b206c9fcfc9ed682a6c7fe6349f",
+  "submission_sha256": "e0e55cf4eb383769c17b742d556d619859307b82a4267792ad2345698126d9ea",
+  "all_180_real_test_JPEG_inferred_from_weights": true,
+  "source_input_modes_verified": [
+    "authorized_original_ZIP",
+    "extracted_kaggle_test_directory"
+  ],
+  "prediction_rows": 1013,
+  "test_images": 180,
+  "empty_images": 6,
+  "original_polygon_audit_images": 62,
+  "original_polygon_audit_views": 93,
+  "local_native_PQ": 0.27311477742304735,
+  "notebook_code_cells_executed": 7,
+  "pdf_pages": 4,
+  "pinned_requirements": 14,
+  "source_zip_used_for_full_ID_audit": "MAGFiLO_1.0_Kaggle_2026.zip",
+  "computed_without_any_hidden_test_labels": true
+}

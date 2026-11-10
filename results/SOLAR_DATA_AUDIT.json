@@ -1,0 +1,10 @@
+{
+  "splits": {
+    "train": 582,
+    "tune": 63,
+    "holdout": 62
+  },
+  "total_images": 707,
+  "annotator_views": 1154,
+  "test_used": false
+}

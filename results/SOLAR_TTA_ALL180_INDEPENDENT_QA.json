@@ -1,0 +1,13 @@
+{
+  "source_file": "SOLAR_180_TEST_TTA_ALTERNATE.csv",
+  "sha256": "a7ea3ade6998e828ec68b5a578fbb4c3480d3dd8fde9c99f51b0a4a16a408db5",
+  "valid_rows": 1013,
+  "expected_test_images": 180,
+  "empty_prediction_images": 6,
+  "actual_decoded_2048_masks": 30,
+  "all_rle_counts_sum_4194304": true,
+  "id_unique_and_source_verified": true,
+  "test_gt_used": false,
+  "organizer_score": null,
+  "caveat": "Kaggle-compatible *candidate*, not an organizer-accepted submission."
+}

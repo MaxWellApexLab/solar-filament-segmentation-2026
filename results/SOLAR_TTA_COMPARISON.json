@@ -1,0 +1,15 @@
+{
+  "selection": "train-date-disjoint 63-image tuning subset",
+  "method": "flipped_average",
+  "parameters": {
+    "threshold": 0.4,
+    "min_area": 70,
+    "min_elongation": 1.2
+  },
+  "tuning_pq": 0.3408276721185726,
+  "holdout_baseline_pq": 0.30976339102556893,
+  "holdout_tta_pq": 0.3281036116068661,
+  "holdout_selected_pq": 0.3281036116068661,
+  "test_ground_truth_used": false,
+  "comment": "Local downsampled 512px PQ; 62-image date-separated audit; not official Kaggle score."
+}

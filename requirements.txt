@@ -1,0 +1,17 @@
+# Exact reference environment used for real-data validation on 2026-11-05.
+# PyTorch 2.10.0+cpu is compatible with the canonical torch==2.10.0 spec.
+# Install compatible wheels for the target CPU/GPU runtime before execution.
+numpy==2.3.5
+scipy==1.17.0
+opencv-python==4.13.0.92
+torch==2.10.0
+Pillow==12.3.0
+matplotlib==3.10.8
+reportlab==4.4.9
+scikit-learn==1.8.0
+pytest==9.0.2
+nbformat==5.10.4
+nbclient==0.10.4
+ipykernel==7.2.0
+jupyter-client==8.8.0
+pypdf==5.9.0
