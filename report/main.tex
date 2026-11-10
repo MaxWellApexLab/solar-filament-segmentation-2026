@@ -10,7 +10,7 @@
 \title{Reproducible Solar Filament Instance Segmentation with Four-Flip Ensembling and Native-Resolution Edge Refinement}
 \subtitle{IEEE BigDataCup 2026 --- Solar Filament Segmentation Challenge}
 \author{Kuan Ta Wu}
-\affiliation{\institution{Max Well Apex LLC}}
+\affiliation{\institution{Max Well Apex LLC}\city{New York}\country{USA}}
 \renewcommand{\shortauthors}{Kuan Ta Wu}
 \begin{abstract}
 We present an independently reproducible, CPU-capable algorithm for segmenting individual solar filaments in 2048\,$\times$\,2048 GONG H-alpha observations. A compact U-Net is trained exclusively on the authorized MAGFiLO 2026 training split and predicts dense filament confidence at 512 pixels. Four-flip test-time augmentation (TTA), solar-disk filtering, connected components, and native-grid confidence clipping yield distinct COCO run-length masks. Across 62 date-separated training-audit images and 93 independent human annotation views, pooled native-resolution Panoptic Quality (PQ) increases from 0.2395 without TTA to 0.2629 with TTA and 0.2731 with edge clipping. The latter increment is +0.0102 (paired image-level bootstrap 95\% interval +0.0017 to +0.0187). A 180-image candidate with 1,013 instances is reconstructed from original unlabelled JPEGs and the saved checkpoint, byte-for-byte matching the supplied CSV. These are local results, not a hidden-test Kaggle score, and the current model is limited by 512-pixel feature resolution.
