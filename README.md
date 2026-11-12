@@ -1,6 +1,6 @@
 # Solar Filament Segmentation Challenge 2026 — reproducible real-data entry candidate
 
-> **Status as of November 5, 2026:** All 180 organizer test images have been **independently inferred from original JPEG bytes**, and the resulting output matches the tracked `submission.csv` **byte-for-byte**. The full Jupyter notebook has been **executed without skips or errors**. A four-page ACM `acmart/sigconf` technical report has been compiled and visually inspected. **This is a locally validated candidate; a Kaggle submission of this exact CSV on November 9, 2026 scored 0.20 on the public leaderboard (not an award).**
+> **Status as of November 11, 2026:** The final entry is the two-stage detector+refiner pipeline in [`pipeline_final/`](pipeline_final/README_PIPELINE.md), which scored **0.34 on the public leaderboard** (submission ref 58254552; date-disjoint native-resolution holdout PQ 0.4209). The earlier semantic-model release documented below remains fully preserved and verified; its tracked `submission.csv` scored 0.20, and later semantic candidates reached 0.26--0.30. Public scores are not awards, and the private score is not yet known.
 
 Official challenge: https://www.kaggle.com/competitions/filament-segmentation-2026
 
@@ -12,7 +12,11 @@ Official challenge: https://www.kaggle.com/competitions/filament-segmentation-20
 | Public Git repository for the organizing committee | **This entire directory** excluding the original competition JPEG/annotation data; includes source, model weights, `requirements.txt`, executed notebook and scientific evidence |
 | Organizers' final Google Form | Public Git link and **`report/technical_report_4pages.pdf`** plus the team details requested on the form |
 
-**Competition deadline: November 15, 2026, 11:59 pm CDT.** A first Kaggle submission of the tracked `submission.csv` scored **0.20** (public leaderboard, November 9, 2026); this repository is the public source release for that entry. A stronger 1024px model is in training, and this repository will be updated if it beats the shipped model on the date-disjoint holdout. The organizer Google Form has not yet been submitted. Links to the current official instructions are in `docs/FINAL_SUBMISSION_CHECKLIST.md`.
+**Competition deadline: November 15, 2026, 11:59 pm CDT.** Six candidates were submitted through the Kaggle CLI (public scores 0.20, 0.26, 0.30, 0.29, 0.29, and the final pipeline at **0.34**); every candidate was selected by date-disjoint holdout PQ before submission, never by leaderboard feedback alone. This repository is the public source release for the final pipeline entry; the organizer Google Form and final-submission selection are completed by the participant. Links to the current official instructions are in `docs/FINAL_SUBMISSION_CHECKLIST.md`.
+
+## Final pipeline (2026-11-11, public 0.34)
+
+The scored final candidate is a Mask R-CNN (ResNet50 FPN v2, COCO-pretrained) detector at 1024px plus a ResNet18 U-Net refiner on native-resolution per-instance crops with topology-safe four-flip TTA (detector 0.70 / mask 0.50 / refiner 0.60). Native-resolution holdout PQ is **0.4209** (detector only 0.3421), pooled over all annotator views. Code, candidate CSV + audit, evaluation JSONs, and the four-page pipeline report are in [`pipeline_final/`](pipeline_final/README_PIPELINE.md); checkpoints are GitHub Release assets ([pipeline-v1](https://github.com/MaxWellApexLab/solar-filament-segmentation-2026/releases/tag/pipeline-v1)) because the detector exceeds GitHub's 100 MB file limit. The semantic-model sections below remain as the honest development record and ablation ladder for this pipeline.
 
 ## Verified engineering results
 

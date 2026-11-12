@@ -1,0 +1,18 @@
+{
+  "file": "submission_pipeline_final.csv",
+  "rows": 1585,
+  "images": 180,
+  "empty_images": 3,
+  "mean_instances": 8.805555555555555,
+  "sha256": "e1e95bf387caf00d7566e1ccecdb84f988851c5f3071730aba1ad7f0af5c2cbf",
+  "detector": "detector_best.pt",
+  "refiner": "refiner_best.pt",
+  "device": "cuda",
+  "gpu": "NVIDIA RTX A5500 Laptop GPU",
+  "cfg": {
+    "score_threshold": 0.7,
+    "mask_threshold": 0.5,
+    "refiner_threshold": 0.6,
+    "tta": true
+  }
+}

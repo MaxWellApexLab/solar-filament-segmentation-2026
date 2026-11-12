@@ -1,0 +1,19 @@
+{
+  "split": "holdout",
+  "detector": "detector_best.pt",
+  "refiner": "None",
+  "cfg": {
+    "score_threshold": 0.6,
+    "mask_threshold": 0.5,
+    "refiner_threshold": 0.7,
+    "tta": false
+  },
+  "pooled": {
+    "pq": 0.342130980494491,
+    "tp": 439,
+    "fp": 452,
+    "fn": 281,
+    "rq": 0.5450031036623215,
+    "sq": 0.6277596920007118
+  }
+}
