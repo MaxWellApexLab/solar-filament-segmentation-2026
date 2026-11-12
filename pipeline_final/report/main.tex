@@ -40,7 +40,7 @@
   \city{New York}
   \country{USA}
 }
-\email{YOUR-EMAIL-HERE}   % TODO: replace with the submitting author's email before filing
+\email{maxwellapex@proton.me}
 
 % \author{\guide{Second Author}}
 % \affiliation{%
@@ -123,7 +123,8 @@ DeepUNet base32 & 0.3989 & 0.29\\
 SMP U-Net ResNet34 & 0.3951 & ---\\
 Long base32 (crop 640) & 0.4068 & 0.29\\
 Detector only (native) & 0.3421 & ---\\
-\textbf{Detector + refiner (native)} & \textbf{0.4209} & \textbf{0.34}\\
+Detector + refiner (native, r60) & \textbf{0.4209} & 0.34\\
+\textbf{Detector + refiner (r70)} & 0.4197 & \textbf{0.35}\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -138,8 +139,8 @@ Detector only (native) & 0.3421 & ---\\
 
 Three observations drive the final design. First, the refiner is worth +0.079 PQ over the detector alone (0.3421 to 0.4197 at the initial operating point): detector masks localize objects, but only native-resolution crops draw boundaries accurate enough for the IoU 0.5 gate. Second, an error decomposition of the best semantic model (union Dice 0.691) showed partial-overlap masks and spurious components dominating over merge/split errors, which is why we invested in per-instance refinement and conservative detector thresholds rather than post-hoc splitting heuristics. Third, holdout gains of a few thousandths did not transfer to the public split (three candidates with holdout 0.395--0.407 all scored 0.29), so we select by holdout but report public scores without extrapolating them.
 
-An all-data final-fit variant (fit+tune, fixed epochs 6/8) reached holdout PQ 0.4123 and was rejected in favor of the tune-selected checkpoints above; probability-averaged ensembles of the semantic models (0.3844--0.4060) were likewise evaluated and not selected. The submitted candidate contains 1,585 instances across the 180 test images (three images empty), with SHA-256 \texttt{e1e95bf387\ldots} recorded in the repository audit file.
-On the public leaderboard this candidate scored 0.34 (submission ref.\ 58254552), the best of our six submissions; the private score is not yet known.
+An all-data final-fit variant (fit+tune, fixed epochs 6/8) reached holdout PQ 0.4123 and was rejected in favor of the tune-selected checkpoints above; probability-averaged ensembles of the semantic models (0.3844--0.4060) were likewise evaluated and not selected. The tune-selected candidate contains 1,585 instances across the 180 test images (three images empty; SHA-256 \texttt{e1e95bf387\ldots}); the selected final candidate uses the identical checkpoints at refiner threshold 0.70 and contains 1,587 instances (SHA-256 \texttt{4c41bdb4cd\ldots}), both recorded in repository audit files.
+On the public leaderboard the 0.60 configuration scored 0.34 (ref.\ 58254552) and the selected 0.70 variant scored 0.35 (ref.\ 58257561), the best of our eleven submissions; the private score is not yet known.
 
 \textbf{Reproducibility and compliance.} The release contains the training and inference code, both checkpoints (the detector exceeds GitHub's 100\,MB file limit and is distributed as a release asset with its SHA-256 in the README), all evaluation JSONs, and the exact candidate CSV with its audit file. Every submitted RLE row is verified to sum to $2048^2$ pixels with unique per-image identifiers before upload. Inference consumes only the official test JPEGs. Pretrained weights are the public COCO Mask R-CNN and ImageNet ResNet18 weights~\cite{he2017maskrcnn,he2016resnet}; no external labels, no full-MAGFiLO labels beyond the competition set, and no test-derived statistics are used anywhere in training or threshold selection. AI assistance was used to write and verify code and to draft this report; technical responsibility remains with the submitting participant.
 
